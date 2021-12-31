@@ -20,7 +20,4 @@ SELECT
   n.first_name,
   n.last_name
 FROM names n
-WHERE n.first_name LIKE '______'
-  OR n.first_name LIKE '_______'
-  OR n.first_name LIKE '________'
-  OR n.first_name LIKE '_________'
+WHERE n.first_name LIKE '______%'
