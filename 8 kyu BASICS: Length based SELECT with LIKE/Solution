@@ -1,5 +1,0 @@
-SELECT 
-  n.first_name,
-  n.last_name
-FROM names n
-WHERE n.first_name LIKE '______%'
