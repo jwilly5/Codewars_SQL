@@ -1,0 +1,26 @@
+PROBLEM STATEMENT:
+-- You will need to create SELECT statement in conjunction with LIKE.
+
+-- Please list people which have first_name with at least 6 character long
+
+-- names table schema
+-- id
+-- first_name
+-- last_name
+-- results table schema
+-- first_name
+-- last_name
+
+COMMENTS:
+-- I thought it was strange this problem needed to be solved with the LIKE operator. A simpler solution would just take advantage of LEN. Desipte this,
+-- the below solution functions and will get you the solution. 
+
+-- SOLUTION:
+SELECT 
+  n.first_name,
+  n.last_name
+FROM names n
+WHERE n.first_name LIKE '______'
+  OR n.first_name LIKE '_______'
+  OR n.first_name LIKE '________'
+  OR n.first_name LIKE '_________'
