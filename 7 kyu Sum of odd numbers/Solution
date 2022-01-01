@@ -1,0 +1,3 @@
+SELECT 
+  CAST(n.n^3 as INT) AS "res"
+FROM nums n
