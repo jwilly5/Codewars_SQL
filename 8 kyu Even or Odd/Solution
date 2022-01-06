@@ -1,0 +1,7 @@
+SELECT 
+CASE
+WHEN number % 2 = 0 then 'Even'
+else 'Odd'
+END
+AS is_even
+FROM numbers;
