@@ -1,0 +1,19 @@
+PROBLEM STATEMENT:
+Given the following table 'decimals':
+
+decimals table schema
+id
+number1
+number2
+Return a table with a single column result which is the output of number1 raised to the power of number2.
+
+
+SOLUTION:
+SELECT 
+  (d.number1)^(d.number2) AS "result"
+FROM decimals d
+
+
+NOTES:
+Solving this problem really only takes the understanding that using the "^" key is used to raise a number to the power of x. 
+So with this, you are selecting the number from column number1 and raising it to the power of the number in column number2
