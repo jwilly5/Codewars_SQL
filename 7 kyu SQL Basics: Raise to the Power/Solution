@@ -17,3 +17,5 @@ FROM decimals d
 NOTES:
 Solving this problem really only takes the understanding that using the "^" key is used to raise a number to the power of x. 
 So with this, you are selecting the number from column number1 and raising it to the power of the number in column number2
+
+Alternatively, you can use the "pow" function. In this case you can raise a number to the power of by stating 'pow(number1, number2).
