@@ -1,0 +1,53 @@
+PROBLEM STATEMENT:
+For this challenge you need to create a SELECT statement, this select statement must have NULL handling, using COALESCE and NULLIF.
+
+If no name is specified you must replace with [product name not found]
+
+If no card_name is specified you must replace with [card name not found]
+
+If no price is specified you must throw away the record, you must also filter the dataset by prices greater than 50.
+
+eusales table schema
+id
+name
+price
+card_name
+card_number
+transaction_date
+
+resultant table schema
+id
+name
+price (greater than 50.00)
+card_name
+card_number
+transaction_date
+
+
+SOLUTION:
+select 
+  id, 
+  COALESCE(NULLIF(name, ''), '[product name not found]') as name,
+  price,
+  COALESCE(NULLIF(card_name, ''), '[card name not found]') as card_name,
+  card_number,
+  transaction_date
+from eusales
+where
+price > 50
+
+
+NOTES:
+Reading the statement "COALESCE(NULLIF(name, ''), '[product name not found]') as name"
+
+First, lets breakdown NULLIF(name, '')
+- NULLIF will return NULL if the expressions in the list are equal
+- So in this statment, if name is NULL, it equals '', returning NULL
+- If name is not NULL, the expressions are not equal, and the name will be returned. 
+
+Now we have a value in our Coalesce statement
+- Coalesce returns the first non NULL value in a list
+- In our example, the NULLIF statement has returned either a name or NULL
+  - If a name is returned, that is the first non NULL value in the list, so the name is returned
+  - If the name is blank, we know NULL is returned, resulting in '[product name not found]' as the first non NULL value in our list
+  - [product name not found] is returned and inserted into the cell. 
