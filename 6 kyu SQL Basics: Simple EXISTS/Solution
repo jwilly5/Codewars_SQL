@@ -1,0 +1,41 @@
+PROBLEM STATEMENT:
+For this challenge you need to create a SELECT statement that will contain data about departments that had a sale with a price over 98.00 dollars. This SELECT statement will have to use an EXISTS to achieve the task.
+
+departments table schema
+id
+name
+
+sales table schema
+id
+department_id (department foreign key)
+name
+price
+card_name
+card_number
+transaction_date
+
+resultant table schema
+id
+name
+
+
+SOLUTION:
+SELECT *
+FROM departments d
+WHERE EXISTS 
+  (SELECT 
+    price 
+   FROM sales s
+   WHERE d.id = s.department_id AND s.price > 98
+  )
+  
+
+NOTES:
+Reference Stack Overflow for when to use a JOIN vs EXSISTS: https://stackoverflow.com/questions/7082449/exists-vs-join-and-use-of-exists-clause
+
+1. Select the fields you want returned in your table output
+- in this case we want to return only the department id and name. These are the only two columns in the department table so we can select *
+2. Execute the WHERE EXISTS operator
+- since the sales data is in the sales table, we need to tap into it to ensure we're only pulling departments that have had a sale over $98. 
+- we don't need to return this data in our output, but we do need to access the data in a where clause
+- this is why we don't want to JOIN tables, rather we just want to check if the boolean output in the exists clause is True
