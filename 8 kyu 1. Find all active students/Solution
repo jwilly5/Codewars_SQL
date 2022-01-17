@@ -1,0 +1,18 @@
+Create a simple SELECT query to display student information of all ACTIVE students.
+
+TABLE STRUCTURE:
+
+students
+Id	FirstName	LastName	IsActive
+
+Note: IsActive (true or false)
+
+
+SOLUTION:
+SELECT *
+FROM students s
+WHERE s.IsActive = 1
+
+
+NOTES:
+When using the WHERE clause on a boolean attribute, you need to use 1 as true, or 0 as false. You do not write out true/false. 
