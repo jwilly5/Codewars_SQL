@@ -5,3 +5,13 @@ else 'Odd'
 END
 AS is_even
 FROM numbers;
+
+
+ALTERNATIVE SOLUTION: 
+SELECT 
+CASE
+WHEN mod(number, 2) = 0 then 'Even'
+else 'Odd'
+END
+AS is_even
+FROM numbers;
